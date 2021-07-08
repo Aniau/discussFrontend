@@ -1,0 +1,270 @@
+#body
+{
+    overflow: hidden;
+}
+
+#title
+{
+    font-family: 'Dancing Script', cursive;
+    font-size: 500%;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2.5%;
+}
+
+#first-letter
+{
+    color:  #3f51b5;
+}
+
+#background
+{
+    position: fixed;
+    top: 0;
+    height: 100%;
+}
+
+#nav
+{
+    background-color: #2b3441;
+    width: 100%;
+    height: 15%;
+    top: 0;
+    z-index: 10;
+}
+
+#img
+{
+    width: 300px;
+    height: 100px;
+    z-index: 6;
+    margin: 1.5% 20% 0 auto;
+}
+/* 38525e */
+#icon_one
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 400%;
+    top: 10px;
+    left: 1300px;
+    z-index: -1;
+}
+
+.mat-input-element
+{
+    caret-color: #33cfd0;
+}
+#icon_two
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 900%;
+    top: 700px;
+    left: 800px;
+    z-index: 4;
+}
+
+#icon_three
+{
+    position: absolute;
+    color:#2b3441;
+    font-size: 350%;
+    top: 400px;
+    left: 50px;
+    z-index: 4;
+}
+
+#icon_four
+{
+    position: absolute;
+    color:#2b3441;
+    font-size: 1200%;
+    top: 300px;
+    left: 1450px;
+    z-index: 4;
+    transform: rotate(-30deg);
+}
+
+#icon_five
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 1100%;
+    top: 150px;
+    left: 300px;
+    z-index: 4;
+    transform: rotate(30deg);
+}
+
+#icon_six
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 700%;
+    top: 250px;
+    left: 1000px;
+    z-index: 4;
+    transform: rotate(250deg);
+}
+
+#icon_seven
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 600%;
+    top: 600px;
+    left: 1300px;
+    z-index: 4;
+}
+
+#icon_eight
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 400%;
+    top: 800px;
+    left: 1700px;
+    z-index: 4;
+}
+
+#icon_nine
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 500%;
+    top: 500px;
+    left: 550px;
+    z-index: 4;
+}
+
+#icon_ten
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 400%;
+    top: 50px;
+    left: 1800px;
+    z-index: 4;
+}
+
+#icon_eleven
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 400%;
+    top: 50px;
+    left: 600px;
+    z-index: 4;
+}
+
+#icon_twelve
+{
+    position: absolute;
+    color: #2b3441;
+    font-size: 500%;
+    top: 750px;
+    left: 100px;
+    z-index: 4;
+}
+
+#id
+{
+    z-index: 5;
+}
+
+#auth
+{
+    position: static;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    margin: 15% auto 0 auto; /*top, right, bottom, left */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+/* EA2088 */
+
+#login-field
+{
+    background-color:#2b3441;
+    color: white;
+    width: 60%;
+    margin: 0 auto 3% auto; /*top, right, bottom, left */
+    padding: 1% 2% 0 2%; /*top, right, bottom, left */
+    border-radius: 20px;
+}
+
+.mat-input-element 
+{
+    color: white;
+}
+
+#pass-field
+{
+    background-color: #2b3441;
+    width: 60%;
+    margin: 0 auto 0 auto; /*top, right, bottom, left*/
+    padding: 1% 2% 0 2%; /*top, right, bottom, left */
+    border-radius: 20px;
+}
+
+#hide-password
+{
+    font-size: 150%;
+    background-color: transparent;
+    box-shadow: transparent;
+}
+
+#login_button
+{
+    margin: 3% auto 0 auto;
+    font-size: 130%;
+    width: 20%;
+    /* background-color: #38525e; */
+    color: #3f51b5;
+}
+
+.show_button
+{
+    animation: show_button linear 0.5s both;
+}
+
+@keyframes show_button 
+{
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+#register-section
+{
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#register
+{
+    color: white;
+    margin-top: 2.5%;
+    vertical-align: middle;
+}
+
+.arrow_right
+{
+    color: white;
+    margin-top: 2%;
+}
+
+#register_icon
+{
+    color: white;
+    width: 20%;
+    margin: 1% auto 0 auto;
+}
+/* #b53d59 */
