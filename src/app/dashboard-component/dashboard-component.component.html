@@ -5,8 +5,8 @@
     <p id="title"><span id="first-letter">D</span>iscuss</p>
     <mat-icon [matMenuTriggerFor]="userMenu">menu</mat-icon>
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item>My account</button>
-      <button mat-menu-item>Logout</button>
+      <button mat-menu-item><mat-icon>face</mat-icon>My account</button>
+      <button mat-menu-item (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
     </mat-menu>
 </div>
   
