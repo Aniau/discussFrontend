@@ -39,8 +39,6 @@ export class AuthComponentComponent implements OnInit {
 
   logIn() :void
   {
-    console.log(this.login);
-    console.log(this.pass);
     this.AuthServiceService.login(this.login, this.pass).subscribe(value => 
     { 
       this.loggedIn = true;

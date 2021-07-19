@@ -18,6 +18,7 @@ export class DashboardComponentComponent implements OnInit {
   {
     this.TokenService.signOut();
     this.router.navigate(['']);
+    console.log();
   }
 
 }
