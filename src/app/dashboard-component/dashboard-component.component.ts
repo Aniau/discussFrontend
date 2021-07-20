@@ -8,12 +8,13 @@ import { TokenServiceService } from '../service/token-service.service';
   styleUrls: ['./dashboard-component.component.css']
 })
 export class DashboardComponentComponent implements OnInit {
-
+  public login = window.sessionStorage.getItem('currentloggedin');
+  
   constructor(private router: Router, private TokenService: TokenServiceService) { }
 
   ngOnInit(): void {
+    console.log(window);
   }
-
   logout(): void
   {
     this.TokenService.signOut();

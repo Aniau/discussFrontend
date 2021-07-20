@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
-const AUTH_API = 'https://localhost:';
+const AUTH_API = 'https://localhost:44370';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-type': 'application/json' })
 };

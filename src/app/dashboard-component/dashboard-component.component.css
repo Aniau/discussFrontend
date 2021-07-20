@@ -32,6 +32,28 @@
     padding-top: 2.5%;
 }
 
+
+
+#my-account:focus
+{
+    outline: none;
+}
+
+#menu-button:focus
+{
+    outline: none;
+}
+
+#logout:focus
+{
+    outline: none;
+}
+
+#login
+{
+    color: white;
+}
+
 #first-letter
 {
     color:  #3f51b5;
@@ -179,7 +201,20 @@
     justify-content: center;
   }
   
-  .example-sidenav {
+  .example-sidenav 
+  {
       background-color: transparent;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+  }
+
+  mat-button:focus
+  {
+      outline: nonte;
+  }
+
+  mat-button:active
+  {
+      outline: nonte;
   }

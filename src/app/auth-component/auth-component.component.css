@@ -198,6 +198,16 @@
     border-radius: 20px;
 }
 
+#login-button:focus
+{
+    outline: none; 
+}
+
+#register-icon:focus
+{
+    outline: none; 
+}
+
 .mat-input-element 
 {
     color: white;
@@ -219,7 +229,12 @@
     box-shadow: transparent;
 }
 
-#login_button
+#hide-password:focus
+{
+    outline: none;
+}
+
+#login-button
 {
     margin: 3% auto 0 auto;
     font-size: 130%;
@@ -261,10 +276,19 @@
     margin-top: 2%;
 }
 
-#register_icon
+#register-icon
 {
     color: white;
     width: 20%;
     margin: 1% auto 0 auto;
 }
 /* #b53d59 */
+.snack-correct
+{
+    background-color: #6CCFAC;
+}
+
+.snack-error
+{
+    background-color: #E69BA3;
+}

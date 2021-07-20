@@ -29,11 +29,11 @@
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
-      <button mat-button id="login_button" *ngIf="login && pass" [ngClass]="'show_button'" (click)="logIn()">Log in</button>
+      <button mat-button id="login-button" *ngIf="login && pass" [ngClass]="'show_button'" (click)="logIn()">Log in</button>
       <div id="register-section">
         <p id="register">Account missing? Register now</p><mat-icon class="arrow_right">keyboard_arrow_down</mat-icon>
       </div>
-      <button mat-button id="register_icon"><mat-icon>add</mat-icon><mat-icon>account_circle</mat-icon></button>
+      <button mat-button id="register-icon"><mat-icon>add</mat-icon><mat-icon>account_circle</mat-icon></button>
     </div>
   </div>
   <router-outlet></router-outlet>

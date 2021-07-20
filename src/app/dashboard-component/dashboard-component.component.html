@@ -1,18 +1,21 @@
 <div id="nav">
-    <button type="button" mat-button (click)="drawer.toggle()">
+    <button type="button" id="menu-button" mat-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <p id="title"><span id="first-letter">D</span>iscuss</p>
-    <mat-icon [matMenuTriggerFor]="userMenu">menu</mat-icon>
-    <mat-menu #userMenu="matMenu">
-      <button mat-menu-item><mat-icon>face</mat-icon>My account</button>
-      <button mat-menu-item (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
-    </mat-menu>
+    <div id="menu">
+      <p id="login">{{ login }}</p>
+      <button mat-button id="my-account"></button>
+    </div>
 </div>
 <mat-drawer-container id="body" mode="over" hasBackdrop="false">
 <mat-drawer #drawer class="example-sidenav">
-    <p>Auto-resizing sidenav</p>
-    <p>Lorem, ipsum dolor sit amet consectetur.</p>
+  <button mat-button><mat-icon>face</mat-icon>My account</button>
+  <button mat-button><mat-icon>group</mat-icon>Friends</button>
+  <button mat-button><mat-icon>face</mat-icon>My account</button>
+  <button mat-button><mat-icon>face</mat-icon>My account</button>
+  <button mat-button><mat-icon>settings</mat-icon>Settings</button>
+  <button mat-button id="logout" (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
 </mat-drawer>
 <mat-drawer-content>
     <div id="background">
