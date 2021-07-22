@@ -1,24 +1,26 @@
 <div id="nav">
-    <button type="button" id="menu-button" mat-button (click)="drawer.toggle()">
+    <!--<button type="button" id="menu-button" mat-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
-    </button>
+    </button>-->
     <p id="title"><span id="first-letter">D</span>iscuss</p>
     <div id="menu">
       <p id="login">{{ login }}</p>
-      <button mat-button id="my-account"></button>
     </div>
 </div>
-<mat-drawer-container id="body" mode="over" hasBackdrop="false">
+<div id="side-nav">
+  <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>group</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>settings</mat-icon></button>
+  <button mat-icon-button class="menu-item" id="logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
+</div>
+<mat-card id="friend-zone"></mat-card>
+<!-- <mat-drawer-container id="body" mode="over" hasBackdrop="false">
 <mat-drawer #drawer class="example-sidenav">
-  <button mat-button><mat-icon>face</mat-icon>My account</button>
-  <button mat-button><mat-icon>group</mat-icon>Friends</button>
-  <button mat-button><mat-icon>face</mat-icon>My account</button>
-  <button mat-button><mat-icon>face</mat-icon>My account</button>
-  <button mat-button><mat-icon>settings</mat-icon>Settings</button>
-  <button mat-button id="logout" (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
 </mat-drawer>
 <mat-drawer-content>
-    <div id="background">
+   <div id="background">
     <mat-icon id="icon_one">audiotrack</mat-icon>
     <mat-icon id="icon_two">call</mat-icon>
     <mat-icon id="icon_three">mic</mat-icon>
@@ -35,5 +37,5 @@
     <div class="example-sidenav-content">
     </div>
 </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container>-->
 <router-outlet></router-outlet>
