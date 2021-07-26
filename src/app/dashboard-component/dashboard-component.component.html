@@ -8,14 +8,21 @@
     </div>
 </div>
 <div id="side-nav">
-  <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>home</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>speaker_notes</mat-icon></button>
   <button mat-icon-button class="menu-item"><mat-icon>group</mat-icon></button>
-  <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
   <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
   <button mat-icon-button class="menu-item"><mat-icon>settings</mat-icon></button>
   <button mat-icon-button class="menu-item" id="logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
 </div>
-<mat-card id="friend-zone"></mat-card>
+<mat-card id="friend-zone">
+  <mat-card id="friend" *ngFor="let friend of friends">
+    <p id="friend-info">{{ friend.name }} {{friend.lastname}} ({{friend.login}})</p>
+  </mat-card>
+</mat-card>
+<mat-card id="message-zone">
+
+</mat-card>
 <!-- <mat-drawer-container id="body" mode="over" hasBackdrop="false">
 <mat-drawer #drawer class="example-sidenav">
 </mat-drawer>

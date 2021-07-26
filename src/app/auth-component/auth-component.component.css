@@ -280,12 +280,14 @@
     margin: 1% auto 0 auto;
 }
 /* #b53d59 */
-.snack-correct
+::ng-deep .snack-correct
 {
     background-color: #6CCFAC;
+    color: black;
 }
 
-.snack-error
+::ng-deep .snack-error
 {
     background-color: #E69BA3;
+    color: black;
 }

@@ -13,7 +13,7 @@
     top: 0;
     flex-wrap: nowrap;
     justify-content: space-between;
-    /* z-index: 10; */
+    z-index: 10; 
 }
 
 #background
@@ -203,17 +203,27 @@
   
   .example-sidenav 
   {
-    background-color: transparent;
-    padding: 20px;
-  }
+      background-color: transparent;
+      padding: 40px;
+    }
+#side-nav
+{
+    position: sticky;
+    display: flex;
+    background-color: #2b3441;
+    border-radius: 10px;
+    flex-direction: column;
+    align-content: center;
+    float: left;
+    left: 5px;
+    width: 4%;
+    height: 80%;
+}
   .menu-item
   {
-      display: block;
-      left: 0;
-      margin-top: 20%;
-      margin-left: 5%;
-      width: 100%;
-      color: black;
+    left: 0;
+   margin: auto;
+    color: black;
   }
   .menu-item:focus
   {
@@ -225,6 +235,12 @@
   {
       outline: none;
       color: white;
+    }
+    #message-zone
+    {
+        background-color: #2b3441;
+        width: 20%;
+        display: block;
   }
 
   #friend-zone
@@ -235,9 +251,12 @@
       margin-left: 5%;
       background-color: #2b3441;
       border-radius: 10px;
-  }
-
-  #side-nav
-  {
-      float: left;
-  }
+    }
+    
+    #friend
+    {
+        border-radius: 20px;
+        margin-top: 5%;
+        background-color: #4b5664;
+    }
+    
