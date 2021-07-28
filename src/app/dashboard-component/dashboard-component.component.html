@@ -16,6 +16,10 @@
   <button mat-icon-button class="menu-item" id="logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
 </div>
 <mat-card id="friend-zone">
+  <mat-form-field class="search-friend" appearance="fill">
+    <input matInput type="search" (keyup)="searchFriend($event.target.value)" placeholder="Search friend">
+    <mat-icon>search</mat-icon>
+  </mat-form-field>
   <mat-card id="friend" *ngFor="let friend of friends">
     <p id="friend-info">{{ friend.name }} {{friend.lastname}} ({{friend.login}})</p>
   </mat-card>

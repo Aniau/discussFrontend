@@ -49,6 +49,7 @@ export class DashboardComponentComponent implements OnInit {
   ngOnInit(): void {
     console.log(window);
   }
+
   logout(): void
   {
     this.TokenService.signOut();
@@ -56,4 +57,9 @@ export class DashboardComponentComponent implements OnInit {
     console.log();
   }
 
+  public searchFriend = (e: any) =>
+  {
+    this.friends.filter = e.trim().toLowerCase();
+    console.log(this.friends.filter);
+  }
 }
