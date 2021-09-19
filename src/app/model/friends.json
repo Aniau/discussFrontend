@@ -1,0 +1,35 @@
+{
+    "friends":
+    [
+        {
+            "id": "1",
+            "login": "awrobel",
+            "name": "Ania",
+            "lastname": "Wróbel" 
+        },
+        {
+            "id": "2",
+            "login": "bszyma",
+            "name": "Borys",
+            "lastname": "Szyma" 
+        },
+        {
+            "id": "3",
+            "login": "mzwierzynski",
+            "name": "Michał",
+            "lastname": "Zwierzyński" 
+        },
+        {
+            "id": "4",
+            "login": "jkapela",
+            "name": "Jaś",
+            "lastname": "Kapela" 
+        },
+        {
+            "id": "5",
+            "login": "kmojzesza",
+            "name": "Klapki",
+            "lastname": "Mojżesza" 
+        }
+    ]
+}

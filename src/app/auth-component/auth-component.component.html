@@ -1,0 +1,40 @@
+<div id="nav">
+    <p id="title"><span id="first-letter">D</span>iscuss</p>
+</div>
+<div id="body">
+    <!--<div id="background">
+      <mat-icon id="icon_one">audiotrack</mat-icon>
+      <mat-icon id="icon_two">call</mat-icon>
+      <mat-icon id="icon_three">mic</mat-icon>
+      <mat-icon id="icon_four">headset</mat-icon>
+      <mat-icon id="icon_five">audiotrack</mat-icon>
+      <mat-icon id="icon_six">call</mat-icon>
+      <mat-icon id="icon_seven">mic</mat-icon>
+      <mat-icon id="icon_eight">headset</mat-icon>
+      <mat-icon id="icon_nine">audiotrack</mat-icon>
+      <mat-icon id="icon_ten">call</mat-icon>
+      <mat-icon id="icon_eleven">mic</mat-icon>
+      <mat-icon id="icon_twelve">headset</mat-icon>
+    </div>-->
+    <div id="auth">
+      <mat-form-field id="login-field">
+        <mat-label>LOGIN</mat-label>
+        <input matInput type="text" autocomplete="false"  [(ngModel)]="login" name="login" placeholder="Login"> 
+      </mat-form-field>
+      <mat-form-field id="pass-field">
+        <mat-label>PASSWORD</mat-label>
+        <input matInput type="text" autocomplete="false"  [(ngModel)]="pass" name="password" placeholder="Password"
+        [type]="hide ? 'password' : 'text'"> 
+        <button id="hide-password" mat-icon-button matSuffix (mousedown)="hide = !hide" [matTooltip]="!hide ? 'Hide password' : 'Show password'" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-button id="login-button" *ngIf="login && pass" [ngClass]="'show_button'" (click)="logIn()">Log in</button>
+      <div id="register-section">
+        <p id="register">Account missing? Register now</p><mat-icon class="arrow_right">keyboard_arrow_down</mat-icon>
+      </div>
+      <button mat-icon-button id="register-icon"><mat-icon>add</mat-icon><mat-icon>account_circle</mat-icon></button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <!-- // #33cfd0 -->

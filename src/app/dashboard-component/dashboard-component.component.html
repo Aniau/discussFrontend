@@ -1,0 +1,52 @@
+<div id="nav">
+    <!--<button type="button" id="menu-button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>-->
+    <p id="title"><span id="first-letter">D</span>iscuss</p>
+    <div id="menu">
+      <p id="login">{{ login }}</p>
+    </div>
+</div>
+<div id="side-nav">
+  <button mat-icon-button class="menu-item"><mat-icon>home</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>speaker_notes</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>group</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>face</mat-icon></button>
+  <button mat-icon-button class="menu-item"><mat-icon>settings</mat-icon></button>
+  <button mat-icon-button class="menu-item" id="logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
+</div>
+<mat-card id="friend-zone">
+  <mat-form-field class="search-friend" appearance="fill">
+    <input matInput type="search" (keyup)="searchFriend($event.target.value)" placeholder="Search friend">
+    <mat-icon>search</mat-icon>
+  </mat-form-field>
+  <mat-card id="friend" *ngFor="let friend of friends">
+    <p id="friend-info">{{ friend.name }} {{friend.lastname}} ({{friend.login}})</p>
+  </mat-card>
+</mat-card>
+<mat-card id="message-zone">
+
+</mat-card>
+<!-- <mat-drawer-container id="body" mode="over" hasBackdrop="false">
+<mat-drawer #drawer class="example-sidenav">
+</mat-drawer>
+<mat-drawer-content>
+   <div id="background">
+    <mat-icon id="icon_one">audiotrack</mat-icon>
+    <mat-icon id="icon_two">call</mat-icon>
+    <mat-icon id="icon_three">mic</mat-icon>
+    <mat-icon id="icon_four">headset</mat-icon>
+    <mat-icon id="icon_five">audiotrack</mat-icon>
+    <mat-icon id="icon_six">call</mat-icon>
+    <mat-icon id="icon_seven">mic</mat-icon>
+    <mat-icon id="icon_eight">headset</mat-icon>
+    <mat-icon id="icon_nine">audiotrack</mat-icon>
+    <mat-icon id="icon_ten">call</mat-icon>
+    <mat-icon id="icon_eleven">mic</mat-icon>
+    <mat-icon id="icon_twelve">headset</mat-icon>
+    </div>
+    <div class="example-sidenav-content">
+    </div>
+</mat-drawer-content>
+</mat-drawer-container>-->
+<router-outlet></router-outlet>
