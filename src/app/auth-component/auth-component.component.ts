@@ -39,37 +39,28 @@ export class AuthComponentComponent implements OnInit {
 
   logIn() :void
   {
-    this.AuthServiceService.login(this.login, this.pass).subscribe(value => 
-    { 
-      this.loggedIn = true;
-      this.logFailed = false;
-      this.TokenService.saveToken(value.token);
-      window.sessionStorage.setItem('currentloggedin', this.login);
+    //this.AuthServiceService.login(this.login, this.pass).subscribe(value => 
+    //{ 
+    //  this.loggedIn = true;
+    //  this.logFailed = false;
+    //  console.log(this.login);
+    //  console.log(this.pass);
+    //  this.TokenService.saveToken(value.token);
+    //  window.sessionStorage.setItem('currentloggedin', this.login);
       
-      this.snack.open('Correctly login user: ' + this.login, 'Close', {duration: 40000, panelClass: ['snack-correct']});
-      this.router.navigate(['dashboard-component']);
-      console.log(value) 
-    },
-    error => 
-    {
-      this.loggedIn = false;
-      this.logFailed = true;
-      this.snack.open('Wrong username or password !', 'Close', {duration: 2000, panelClass: ['snack-error']});
-      console.log(error);
-       // const errorNumber = error2.status;
-         //switch (errorNumber) 
-        // {
-          // case 401:
-             //break;
-         //}
-     }
-       //, () => 
-      //{
-         //this.router.navigate(['main-navigator']);
-         //this.snackbar.open('Pomyślnie zalogowano użytkownika ' + sessionStorage.getItem('login').toLocaleUpperCase(), 'Zamknij', 
-         //                    {duration: 2000, panelClass: ['snackbarCorrect']});
-       //}
-       );
-    //this.router.navigate(['dashboard-component']);
+   //   this.snack.open('Correctly login user: ' + this.login, 'Close', {duration: 40000, panelClass: ['snack-correct']});
+   //   this.router.navigate(['dashboard-component']);
+  //    console.log(value) 
+ //   },
+  //  error => 
+  //  {
+//this.loggedIn = false;
+    //  this.logFailed = true;
+    //  console.log(this.login);
+    //  console.log(this.pass);
+    //  this.snack.open('Wrong username or password !', 'Close', {duration: 2000, panelClass: ['snack-error']});
+   //   console.log(error);
+   //  });
+    this.router.navigate(['dashboard-component']);
   }
 }

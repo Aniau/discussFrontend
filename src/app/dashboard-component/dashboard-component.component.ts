@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenServiceService } from '../service/token-service.service';
 import { Friends } from '../model/friends';
+import * as signalR from '@aspnet/signalr';
 
 @Component({
   selector: 'app-dashboard-component',
@@ -10,6 +11,8 @@ import { Friends } from '../model/friends';
 })
 export class DashboardComponentComponent implements OnInit {
   public login = window.sessionStorage.getItem('currentloggedin');
+  public message: string;
+
   friends: Friends[] = 
   [
     {
@@ -48,6 +51,20 @@ export class DashboardComponentComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(window);
+    const connection = new signalR.HubConnectionBuilder()
+    .configureLogging(signalR.LogLevel.Information)
+    .withUrl("https://localhost:44398/notify")
+    .build();
+
+  connection.start().then(function () {
+    console.log('Połączenie nawiązane poprawnie');
+  }).catch(function (err) {
+    return console.error(err.toString());
+  });
+
+  connection.on("BroadcastMessage", (message: string) => {
+    this.message = message;
+  });
   }
 
   logout(): void
@@ -57,9 +74,9 @@ export class DashboardComponentComponent implements OnInit {
     console.log();
   }
 
-  public searchFriend = (e: any) =>
-  {
-    this.friends.filter = e.trim().toLowerCase();
-    console.log(this.friends.filter);
-  }
+//  public searchFriend = (e: any) =>
+//  {
+//   this.friends.filter = e.trim().toLowerCase();
+//    console.log(this.friends.filter);
+//  }
 }

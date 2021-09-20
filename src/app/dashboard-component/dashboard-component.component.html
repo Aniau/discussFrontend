@@ -17,7 +17,7 @@
 </div>
 <mat-card id="friend-zone">
   <mat-form-field class="search-friend" appearance="fill">
-    <input matInput type="search" (keyup)="searchFriend($event.target.value)" placeholder="Search friend">
+    <input matInput type="search" placeholder="Search friend">
     <mat-icon>search</mat-icon>
   </mat-form-field>
   <mat-card id="friend" *ngFor="let friend of friends">
