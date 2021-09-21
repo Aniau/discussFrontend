@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; background-color: #262E38; background-repeat: no-repeat;
+html, body { 
+    height: 100%; 
+    /* background-color: #262E38;  */
+    background-color: rgb(196, 196, 202);
+    background-repeat: no-repeat;
     background-attachment: fixed; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
