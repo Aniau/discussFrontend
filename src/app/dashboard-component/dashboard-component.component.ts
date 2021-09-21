@@ -57,7 +57,7 @@ export class DashboardComponentComponent implements OnInit {
    {
      this.connection = new signalR.HubConnectionBuilder()
        .configureLogging(signalR.LogLevel.Information)
-       .withUrl("https://localhost:44398/notify")
+       .withUrl("https://localhost:44370/CommunicationHub")
        .build();
 
      this.connection.start()
@@ -67,6 +67,11 @@ export class DashboardComponentComponent implements OnInit {
      .catch(function (err: string) {
        return console.error(err.toString());
      });
+
+     this.connection.on("BroadcastMessage", (message: string) => 
+      {
+        console.log(message);
+      });
   }
   
     talkToFriend(friend: Friends)
@@ -86,11 +91,12 @@ export class DashboardComponentComponent implements OnInit {
 
       this.messages.push(messageData);
       this.message = '';
+      this.connection.invoke("SendMessage", message);
 
-       this.connection.on("BroadcastMessage", (message: string) => 
-       {
-         this.message = message;
-       });
+       //this.connection.on("BroadcastMessage", (message: string) => 
+       //{
+       //  this.message = message;
+       //});
     }
 
   logout(): void
