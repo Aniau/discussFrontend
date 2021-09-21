@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TokenServiceService } from '../service/token-service.service';
 import { Friends } from '../model/friends';
 import * as signalR from '@aspnet/signalr';
+import { Message } from '../model/message';
 
 @Component({
   selector: 'app-dashboard-component',
@@ -12,8 +13,11 @@ import * as signalR from '@aspnet/signalr';
 export class DashboardComponentComponent implements OnInit {
   public login = window.sessionStorage.getItem('currentloggedin');
   public message: string;
-
-  friends: Friends[] = 
+  public currentFriendToTalk: string;
+  public messages: Message[] = [];
+  public searchedFriend: string;
+  public connection: signalR.HubConnection;
+  public friends: Friends[] = 
   [
     {
         "id": 1,
@@ -49,34 +53,57 @@ export class DashboardComponentComponent implements OnInit {
 
   constructor(private router: Router, private TokenService: TokenServiceService) { }
 
-  ngOnInit(): void {
-    console.log(window);
-    const connection = new signalR.HubConnectionBuilder()
-    .configureLogging(signalR.LogLevel.Information)
-    .withUrl("https://localhost:44398/notify")
-    .build();
+  ngOnInit()
+   {
+     this.connection = new signalR.HubConnectionBuilder()
+       .configureLogging(signalR.LogLevel.Information)
+       .withUrl("https://localhost:44398/notify")
+       .build();
 
-  connection.start().then(function () {
-    console.log('Połączenie nawiązane poprawnie');
-  }).catch(function (err) {
-    return console.error(err.toString());
-  });
-
-  connection.on("BroadcastMessage", (message: string) => {
-    this.message = message;
-  });
+     this.connection.start()
+     .then(function () {
+         console.log('Połączenie nawiązane poprawnie');
+     })
+     .catch(function (err: string) {
+       return console.error(err.toString());
+     });
   }
+  
+    talkToFriend(friend: Friends)
+    {
+      this.currentFriendToTalk = friend.name + ' ' + friend.lastname + ' (' + friend.login + ')';
+    }
+  
+    sendMesagge(message: string)
+    {
+      const messageData: Message = 
+      {
+        message: message,
+        send: true,
+        date: new Date(),
+        login: this.login,
+      } 
+
+      this.messages.push(messageData);
+      this.message = '';
+
+       this.connection.on("BroadcastMessage", (message: string) => 
+       {
+         this.message = message;
+       });
+    }
 
   logout(): void
   {
     this.TokenService.signOut();
     this.router.navigate(['']);
-    console.log();
   }
 
-//  public searchFriend = (e: any) =>
-//  {
-//   this.friends.filter = e.trim().toLowerCase();
-//    console.log(this.friends.filter);
-//  }
+  searchFriend(e: string)
+  {
+    console.log(e);
+    // this.friends.filter = e.trim().toLowerCase();
+   // console.log(this.friends.filter(array => this.friends.indexOf() > -1));
+
+  }
 }
