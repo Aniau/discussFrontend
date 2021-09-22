@@ -86,17 +86,12 @@ export class DashboardComponentComponent implements OnInit {
         message: message,
         send: true,
         date: new Date(),
-        login: this.login,
+        login: 'DefaultUser',//this.login,
       } 
 
       this.messages.push(messageData);
       this.message = '';
-      this.connection.invoke("SendMessage", message);
-
-       //this.connection.on("BroadcastMessage", (message: string) => 
-       //{
-       //  this.message = message;
-       //});
+      this.connection.invoke("SendMessage", messageData);
     }
 
   logout(): void
