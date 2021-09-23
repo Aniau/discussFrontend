@@ -1,0 +1,42 @@
+#side-nav
+{
+    position: sticky;
+    display: flex;
+    background-color: #3f51b5;
+    border-radius: 30px;
+    flex-direction: column;
+    align-content: center;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-item
+{
+    margin: auto 50% auto auto;
+    color: white;
+    height: 50px;
+    width: 50px;
+}
+
+#login
+{
+    margin: auto auto 0% auto;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+
+mat-icon
+{
+    font-size: 180%;
+}
+
+button[type=button]:focus
+{
+    outline: none;
+}
+
+.active-route
+{
+    color: #8890be;
+}

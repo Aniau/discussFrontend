@@ -1,8 +1,7 @@
 <app-logo-component></app-logo-component>
 <div id="flex" [ngClass]="darkMode === true ? 'darkMode-background': 'lightMode-background'">  
   <app-menu-component id="menu-component"></app-menu-component>
-  <mat-card id="dashboard" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
-
+  <mat-card id="users" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
   </mat-card>
 </div>
 <router-outlet></router-outlet>

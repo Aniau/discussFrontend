@@ -1,0 +1,26 @@
+<app-logo-component></app-logo-component>
+<div id="flex" [ngClass]="darkMode === true ? 'darkMode-background': 'lightMode-background'">  
+  <app-menu-component id="menu-component"></app-menu-component>
+  <mat-card id="friend-zone" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+    <mat-form-field class="search-friend" appearance="fill">
+      <input matInput id="search-input" type="search" (keyup)="searchFriend($event)" placeholder="Search friend">
+    </mat-form-field>
+    <mat-card id="friend" *ngFor="let friend of this.dataSource.filteredData" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+      <button mat-button type="button" (click)="talkToFriend(friend)" id="friend-info" #friend>{{ friend.name }} {{friend.lastname}} ({{friend.login}})</button>
+    </mat-card>
+  </mat-card>
+  <mat-card id="message-zone" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+    <mat-card-title id="conversation-friend">{{ currentFriendToTalk }} </mat-card-title>
+    <mat-card-content id="message-history">
+      <mat-card class="message" *ngFor="let message of messages" [ngClass]="message.login === login ? 'message-login-user' : 'message-friend-user'">
+        {{ message.message }}
+        <p>{{ message.date | date: 'MM-dd-yyyy, HH:mm:ss' }}</p>
+      </mat-card>
+    </mat-card-content>
+    <mat-form-field class="message-friend" appearance="fill" *ngIf="currentFriendToTalk">
+      <textarea  matInput placeholder="Write a message..." [(ngModel)]="message"></textarea>
+    </mat-form-field>
+    <button mat-raised-button id="send-button" [disabled]="!message" type="button" (click)="sendMesagge(message)" *ngIf="currentFriendToTalk">Send</button>
+  </mat-card>
+</div>
+<router-outlet></router-outlet>

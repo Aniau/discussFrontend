@@ -1,0 +1,8 @@
+<div id="side-nav">
+  <span class="menu-item" id="login">{{ login }}</span>
+  <button mat-icon-button class="menu-item" type="button" matTooltip="Home" routerLinkActive="active-route" routerLink="/dashboard-component"><mat-icon>home</mat-icon> Home</button>
+  <button mat-icon-button class="menu-item" type="button" matTooltip="Chat" routerLinkActive="active-route" routerLink="/chat-component"><mat-icon>speaker_notes</mat-icon> Chat</button>
+  <button mat-icon-button class="menu-item" type="button" matTooltip="Users" routerLinkActive="active-route" routerLink="/users-component"><mat-icon>group</mat-icon> Users</button>
+  <button mat-icon-button class="menu-item" type="button" matTooltip="Setting" routerLinkActive="active-route" routerLink="/settings-component"><mat-icon>settings</mat-icon> Setting</button>
+  <button mat-icon-button class="menu-item" type="button" matTooltip="Logout" id="logout" (click)="logout()"><mat-icon>logout</mat-icon> Logout</button>
+</div>

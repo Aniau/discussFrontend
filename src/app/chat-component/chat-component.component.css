@@ -1,0 +1,170 @@
+#body
+{
+    overflow: hidden;
+}
+
+#nav
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    top: 0;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    z-index: 10; 
+}
+
+#background
+{
+    position: fixed;
+    height: 100%;
+}
+
+#flex
+{
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#title
+{
+    font-family: 'Dancing Script', cursive;
+    font-size: 500%;
+    font-weight: bold;
+    margin: 2.5% auto 2% auto;
+}
+
+#login
+{
+    color: white;
+}
+
+#first-letter
+{
+    color:  #3f51b5;
+}
+
+.mat-input-element
+{
+    caret-color: #33cfd0;
+}
+
+#menu-component
+{
+    width: 10%;
+}
+
+#message-zone
+{
+    width: 55%;
+    display: block;
+    border-radius: 30px;
+}
+
+#friend-zone
+{
+    position: sticky;
+    width: 30%;
+    border-radius: 30px;
+}
+
+#friend
+{
+    margin-top: 5%;
+}
+
+#conversation-friend
+{
+    color: rgb(117, 117, 117);
+    height: 7%;
+    padding: 2% 0 2% 4%;
+}
+
+.message-friend
+{
+    width: 80%;
+}
+
+#send-button
+{
+    background-color: #3f51b5;
+    color: white;
+    font-size: larger;
+    margin-left: 5%;
+    width: 10%;
+    height: 6%;
+    bottom: 1.5%;
+}
+
+#message-history
+{
+    width: 100%;
+    height: 70%;
+    max-height: 70%;
+    margin-bottom: 10%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.search-friend
+{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#friend-info
+{
+    width: 100%;
+    text-align: left;
+    height: 100%;
+}
+
+button[type=button]:focus
+{
+    outline: none;
+}
+
+.message-login-user
+{
+    float: left;
+    border-radius: 20px;
+    margin: 1%;
+    background-color: #3f51b5;
+    color: white;
+    width: 80%;
+}
+
+.message-friend-user
+{
+    float: right;
+    border-radius: 20px;
+    margin: 1%;
+    background-color: white;
+    color: black;
+    width: 80%;
+}
+
+/* DARK MODE */
+
+.darkMode-background
+{
+    background-color: rgb(43, 42, 42);
+}
+
+.lightMode-background
+{
+    background-color: rgb(196, 196, 202);
+}
+
+.darkMode-card
+{
+    background-color: rgb(71, 71, 71);
+}
+
+.lightMode-card
+{
+    background-color: white;
+}
