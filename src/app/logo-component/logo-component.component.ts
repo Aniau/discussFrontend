@@ -9,6 +9,7 @@ import { DarkModeServiceService } from '../service/dark-mode-service.service';
 export class LogoComponentComponent implements OnInit {
 
   public darkMode: boolean = false;
+  
   constructor(private darkModeService: DarkModeServiceService) { }
 
   ngOnInit(): void {

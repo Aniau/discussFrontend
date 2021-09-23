@@ -2,7 +2,7 @@
 <div id="flex" [ngClass]="darkMode === true ? 'darkMode-background': 'lightMode-background'">  
   <app-menu-component id="menu-component"></app-menu-component>
   <mat-card id="settings" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
-    <mat-slide-toggle id="dark-mode-toggle" color="primary" (change)="toggleDarkMode($event)"></mat-slide-toggle>
+    <mat-slide-toggle id="dark-mode-toggle" color="primary" [checked]="'darkmode'" (change)="toggleDarkMode($event)"></mat-slide-toggle>
   </mat-card>
 </div>
 <router-outlet></router-outlet>

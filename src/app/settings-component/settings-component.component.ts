@@ -9,24 +9,38 @@ import { DarkModeServiceService } from '../service/dark-mode-service.service';
 export class SettingsComponentComponent implements OnInit 
 {
   public darkMode: boolean = false;
+  private body = document.body;
 
   constructor(private darkModeService: DarkModeServiceService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
+    this.darkModeService.getDarkMode().subscribe(
+      result => 
+      {
+        this.darkMode = result;
+        this.bodyMode(this.darkMode);
+      }
+    )
   }
 
   toggleDarkMode(event: any)
   {
     this.darkMode = event.checked; 
     this.darkModeService.setDarkMode(event.checked);
-    const body = document.body;
-    if(event.checked === true)
+
+    this.bodyMode(event.checked);
+  }
+
+  bodyMode(mode: boolean)
+  {
+    if(mode === true)
     {
-      body.style.backgroundColor = "rgb(43, 42, 42)";
+      this.body.style.backgroundColor = "rgb(43, 42, 42)";
     }
     else
     {
-      body.style.backgroundColor = "rgb(196, 196, 202)";
+      this.body.style.backgroundColor = "rgb(196, 196, 202)";
     }
   }
 }
