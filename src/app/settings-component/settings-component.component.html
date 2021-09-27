@@ -2,7 +2,36 @@
 <div id="flex" [ngClass]="darkMode === true ? 'darkMode-background': 'lightMode-background'">  
   <app-menu-component id="menu-component"></app-menu-component>
   <mat-card id="settings" [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
-    <mat-slide-toggle id="dark-mode-toggle" color="primary" (change)="toggleDarkMode($event)"></mat-slide-toggle>
+    <h1>Setting</h1>
+    <mat-card class="settings-item"  [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+      <mat-icon class="sunny">wb_sunny</mat-icon><mat-slide-toggle id="dark-mode-toggle" color="primary" [(ngModel)]="darkMode" (change)="toggleDarkMode($event)"></mat-slide-toggle><mat-icon class="night">brightness_3</mat-icon>
+    </mat-card>
+    <mat-card class="settings-item"  [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+      <input mat-button type="file" #uploadPicture id="uploadFile" (change)="uploadMainPicture($event)" name="uploadPicture" accept="image/*" />
+      <!-- <button mat-button>Browse file</button> -->
+      <div><img src="{{dataSrc}}" width="300px"></div>
+    </mat-card>
+    <mat-card class="settings-item"  [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+      <mat-form-field appearance="fill" >
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="E-mail" [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-card>
+    <mat-card class="settings-item"  [ngClass]="darkMode === true ? 'darkMode-card': 'lightMode-card'">
+      <mat-form-field appearance="fill" >
+        <mat-label>Phone</mat-label>
+        <input type="tel" matInput placeholder="Phone" [formControl]="phoneFormControl">
+        <mat-error *ngIf="phoneFormControl.hasError('required')">
+          Phone is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-card>
   </mat-card>
 </div>
 <router-outlet></router-outlet>

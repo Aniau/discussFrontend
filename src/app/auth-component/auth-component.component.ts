@@ -69,6 +69,6 @@ export class AuthComponentComponent implements OnInit {
 //      this.snack.open('Wrong username or password !', 'Close', {duration: 2000, panelClass: ['snack-error']});
 //      console.log(error);
 //     });
-    this.router.navigate(['dashboard-component']);
+    this.router.navigate(['chat-component']);
   }
 }

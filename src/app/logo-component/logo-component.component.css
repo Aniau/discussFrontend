@@ -18,11 +18,8 @@
 
 #title
 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 500%;
-    font-weight: bold;
+    
     margin: 2.5% auto 2% auto;
-    color: black;
 }
 
 #first-letter
@@ -39,7 +36,7 @@
 
 .lightMode-background
 {
-    background-color: rgb(196, 196, 202);
+    background-color:#000f1cff ;
 }
 
 .darkMode-title

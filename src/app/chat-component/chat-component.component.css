@@ -47,33 +47,43 @@
     color:  #3f51b5;
 }
 
-.mat-input-element
-{
-    caret-color: #33cfd0;
-}
-
 #menu-component
 {
     width: 10%;
 }
 
-#message-zone
-{
-    width: 55%;
-    display: block;
-    border-radius: 30px;
-}
-
-#friend-zone
-{
-    position: sticky;
-    width: 30%;
-    border-radius: 30px;
-}
-
 #friend
 {
-    margin-top: 5%;
+    margin-top: 1%;
+    position: relative;
+    box-shadow: none;
+    color: #00cad2;
+}
+
+#submenu-friend
+{
+    position: absolute;
+    top: -40px;
+    right: 0px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    background-color: #000f1cff;
+    color: #00cad2;
+}
+
+#exit-friend
+{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+#clear
+{
+    font-size: 90%;
+    margin-top: -20px;
+    padding-right: 5px;
 }
 
 #conversation-friend
@@ -83,20 +93,10 @@
     padding: 2% 0 2% 4%;
 }
 
-.message-friend
-{
-    width: 80%;
-}
 
-#send-button
+#menu-component
 {
-    background-color: #3f51b5;
-    color: white;
-    font-size: larger;
-    margin-left: 5%;
-    width: 10%;
-    height: 6%;
-    bottom: 1.5%;
+    width: 5%;
 }
 
 #message-history
@@ -109,15 +109,38 @@
     scroll-behavior: smooth;
 }
 
+#history
+{
+    position: relative;
+}
+
+.message-friend
+{
+    width: 80%;
+    position: absolute;
+    bottom: 2%;
+}
+
+#send-button
+{
+    background-color: #3f51b5;
+    color: white;
+    font-size: larger;
+    left: 90%;
+    width: 10%;
+    height: 6%;
+    bottom: 4%;
+}
+
 .search-friend
 {
     width: 100%;
     border-radius: 10px;
 }
 
-#friend-info
+#friend-info, #favorite-info
 {
-    width: 100%;
+    width: 90%;
     text-align: left;
     height: 100%;
 }
@@ -132,7 +155,7 @@ button[type=button]:focus
     float: left;
     border-radius: 20px;
     margin: 1%;
-    background-color: #3f51b5;
+    background-color: #005965;
     color: white;
     width: 80%;
 }
@@ -147,6 +170,155 @@ button[type=button]:focus
     width: 80%;
 }
 
+
+.message-zone
+{
+    width: 0%;
+    border-radius: 10px;
+    animation-name: calculateMessageZoneReverse;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes calculateMessageZoneReverse 
+{
+    from 
+    {
+        width: 55%;
+    }
+    to
+    {
+        width: 0%;
+    } 
+}
+
+.message-zone-active
+{
+    width: 55%;
+    border-radius: 10px;
+    animation-name: calculateMessageZone;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes calculateMessageZone 
+{
+    from 
+    {
+        width: 0%;
+    }
+    to
+    {
+        width: 55%;
+    } 
+}
+
+.friend-zone
+{
+    width: 80%;
+    border-radius: 10px;
+    animation-name: calculateFriendZoneReverse;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+@keyframes calculateFriendZoneReverse 
+{
+    from
+    {
+        width: 30%;
+    }
+    to 
+    {
+        width: 80%;
+    } 
+}
+
+.friend-zone-active
+{
+    width: 30%;
+    border-radius: 10px;
+    animation-name: calculateFriendZone;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+@keyframes calculateFriendZone 
+{
+    from
+    {
+        width: 80%;
+    }
+    to 
+    {
+        width: 30%;
+    } 
+}
+
+.active-friend
+{
+    color: green;   
+    font-size: 100%;
+}
+
+.not-active-friend
+{
+    color: red;
+    font-size: 100%;
+}
+
+#gold
+{
+    color: gold;
+    float: right;
+}
+
+/* #divider
+{
+    margin: 10px 5% auto 5%;
+    width: 90%;
+} */
+
+.header
+{
+    display: block;
+    margin-top: 10px;
+    color: #00cad2;
+}
+#favorites
+{
+    /* color: transparent; */
+    box-shadow: none !important;
+    color: #00cad2;
+}
+
+.icon
+{
+    margin-right: 10px;
+}
+
+.emoji-mart
+{
+    position: absolute;
+    bottom: 100px;
+}
+
+.icon-left
+{
+    float: right;
+    margin: auto;
+}
+
 /* DARK MODE */
 
 .darkMode-background
@@ -156,15 +328,29 @@ button[type=button]:focus
 
 .lightMode-background
 {
-    background-color: rgb(196, 196, 202);
+    background-color:#000f1cff;
 }
 
 .darkMode-card
 {
-    background-color: rgb(71, 71, 71);
+    background-color: #343c44;
+    color: white;
 }
 
 .lightMode-card
 {
-    background-color: white;
+    background-color: #002534ff;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    overflow-y: scroll;
+    background: rgb(196, 196, 202);;
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f51b5;
+    border-radius: 1px;
 }

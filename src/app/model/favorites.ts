@@ -1,4 +1,4 @@
-export interface Friends
+export interface Favorite
 {
     id: number,
     login: string,
