@@ -1,0 +1,55 @@
+<app-logo-component></app-logo-component>
+
+<div class="container">
+  <form class="">
+      <!-- <mat-form-field class="input-registration" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcherEmail" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Prosze wprowadzić prawidłowy adres email
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Prosze wprowadzić adres email
+          </mat-error>
+      </mat-form-field> -->
+
+      <!-- <button mat-raised-button color="primary" class="input-registration" (click)="registration()" [disabled]="!form.valid">Rejestruj</button> -->
+  </form>
+
+  <form [formGroup]="form">
+    <mat-form-field class="input-registration" appearance="fill">
+      <mat-label>Login</mat-label>
+      <input matInput id="login" type="text" formControlName="login" placeholder="Ex. pat@example.com">
+      <mat-error>
+        Prosze podać login
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="input-registration" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput id="email" type="text" formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error>
+        Prosze wpisać poprawny adres email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="input-registration" appearance="fill">
+      <mat-label>Hasło</mat-label>
+      <input matInput id="password" type="password" formControlName="password" placeholder="Ex. pat@example.com">
+      <mat-error>
+        Prosze wpisać hasło
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="input-registration" appearance="fill">
+      <mat-label>Prosze powtórzyć hasło</mat-label>
+      <input matInput id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Ex. pat@example.com">
+      <mat-error>
+        Prosze wpisać hasło ponownie
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="input-registration" (click)="registration()">Rejestruj</button>
+  </form>
+</div>
+<router-outlet></router-outlet>

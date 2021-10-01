@@ -23,6 +23,7 @@ import { ChatComponentComponent } from './chat-component/chat-component.componen
 import { UsersComponentComponent } from './users-component/users-component.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LogoComponentComponent } from './logo-component/logo-component.component';
+import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LogoComponentComponent } from './logo-component/logo-component.componen
     MenuComponentComponent,
     ChatComponentComponent,
     UsersComponentComponent,
-    LogoComponentComponent
+    LogoComponentComponent,
+    RegistrationComponentComponent
   ],
   imports: [
     BrowserModule,
