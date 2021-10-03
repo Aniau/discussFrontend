@@ -3,7 +3,7 @@
     overflow: hidden;
 }
 
-#nav
+/* #nav
 {
     display: flex;
     flex-direction: row;
@@ -13,7 +13,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     z-index: 10; 
-}
+} */
 
 #background
 {
@@ -29,7 +29,7 @@
     justify-content: space-around;
 }
 
-#title
+/* #title
 {
     font-family: 'Dancing Script', cursive;
     font-size: 500%;
@@ -45,59 +45,60 @@
 #first-letter
 {
     color:  #3f51b5;
-}
-
-.mat-input-element
-{
-    caret-color: #33cfd0;
-}
+} */
 
 #menu-component
 {
     width: 10%;
-}
-
-#message-zone
-{
-    width: 55%;
-    display: block;
-    border-radius: 30px;
-}
-
-#friend-zone
-{
     position: sticky;
-    width: 30%;
-    border-radius: 30px;
 }
 
 #friend
 {
-    margin-top: 5%;
+    margin-top: 1%;
+    position: relative;
+    box-shadow: none;
+    color: #94989C;
+}
+
+#submenu-friend
+{
+    position: absolute;
+    top: -40px;
+    right: 0px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    background-color: #000f1cff;
+    color: #00cad2;
+}
+
+#exit-friend
+{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+#clear
+{
+    font-size: 90%;
+    margin-top: -20px;
+    padding-right: 5px;
 }
 
 #conversation-friend
 {
-    color: rgb(117, 117, 117);
+    color: #94989C;
     height: 7%;
     padding: 2% 0 2% 4%;
 }
 
-.message-friend
-{
-    width: 80%;
-}
 
-#send-button
+/* #menu-component
 {
-    background-color: #3f51b5;
-    color: white;
-    font-size: larger;
-    margin-left: 5%;
-    width: 10%;
-    height: 6%;
-    bottom: 1.5%;
-}
+    width: 5%;
+} */
 
 #message-history
 {
@@ -109,15 +110,50 @@
     scroll-behavior: smooth;
 }
 
+#history
+{
+    position: relative;
+}
+
+.message-friend
+{
+    width: 80%;
+    position: absolute;
+    bottom: 2%;
+    color: #94989C;
+}
+
+#send-button
+{
+    background-color: rgb(117, 117, 117);
+    color: white;
+    font-size: larger;
+    left: 87%;
+    width: 10%;
+    height: 6%;
+    bottom: 3%;
+}
+
 .search-friend
 {
     width: 100%;
     border-radius: 10px;
+    color: #94989C;
 }
 
-#friend-info
+mat-label
 {
-    width: 100%;
+    color: #94989C;
+}
+
+img
+{
+    margin-right: 5%;
+}
+
+#friend-info, #favorite-info
+{
+    width: 90%;
     text-align: left;
     height: 100%;
 }
@@ -132,7 +168,7 @@ button[type=button]:focus
     float: left;
     border-radius: 20px;
     margin: 1%;
-    background-color: #3f51b5;
+    background-color: #005965;
     color: white;
     width: 80%;
 }
@@ -142,9 +178,163 @@ button[type=button]:focus
     float: right;
     border-radius: 20px;
     margin: 1%;
-    background-color: white;
-    color: black;
+    background-color: #000f1cff;
+    color: white;
     width: 80%;
+}
+
+
+.message-zone
+{
+    width: 0%;
+    border-radius: 5px;
+    animation-name: calculateMessageZoneReverse;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes calculateMessageZoneReverse 
+{
+    from 
+    {
+        width: 55%;
+    }
+    to
+    {
+        width: 0%;
+    } 
+}
+
+.message-zone-active
+{
+    width: 55%;
+    border-radius: 5px;
+    animation-name: calculateMessageZone;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes calculateMessageZone 
+{
+    from 
+    {
+        width: 0%;
+    }
+    to
+    {
+        width: 55%;
+    } 
+}
+
+.friend-zone
+{
+    width: 90%;
+    border-radius: 5px;
+    animation-name: calculateFriendZoneReverse;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes calculateFriendZoneReverse 
+{
+    from
+    {
+        width: 30%;
+    }
+    to 
+    {
+        width: 90%;
+    } 
+}
+
+.friend-zone-active
+{
+    width: 40%;
+    border-radius: 5px;
+    animation-name: calculateFriendZone;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+@keyframes calculateFriendZone 
+{
+    from
+    {
+        width: 90%;
+    }
+    to 
+    {
+        width: 40%;
+    } 
+}
+
+.active-friend
+{
+    color: green;   
+    font-size: 100%;
+}
+
+.not-active-friend
+{
+    color: red;
+    font-size: 100%;
+}
+
+#gold
+{
+    color: gold;
+    float: right;
+}
+
+/* #divider
+{
+    margin: 10px 5% auto 5%;
+    width: 90%;
+} */
+
+.header
+{
+    display: block;
+    margin-top: 10px;
+    color: #00cad2;
+}
+#favorites
+{
+    /* color: transparent; */
+    box-shadow: none !important;
+    color: #94989C;
+}
+
+.icon
+{
+    margin-right: 10px;
+    color: #94989C;
+}
+
+.emoji-mart
+{
+    position: absolute;
+    bottom: 100px;
+}
+
+.icon-left
+{
+    float: right;
+    margin: auto;
+}
+
+#friends-scroll-section
+{
+    background-color: #002534ff;
+    overflow-y: auto;
+    scroll-behavior:smooth;
+    height: 85%;
+    box-shadow: none;
+    /* overflow-x: hidden; */
 }
 
 /* DARK MODE */
@@ -156,15 +346,39 @@ button[type=button]:focus
 
 .lightMode-background
 {
-    background-color: rgb(196, 196, 202);
+    background-color:#000f1cff;
 }
 
 .darkMode-card
 {
-    background-color: rgb(71, 71, 71);
+    background-color: #343c44;
+    color: white;
 }
 
 .lightMode-card
 {
-    background-color: white;
+    background-color: #002534ff;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    overflow-y: scroll;
+    background: #000f1cff;
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #343c44;
+    border-radius: 1px;
+}
+
+::ng-deep .mat-form-field-ripple 
+{
+    background-color: #00cad2 !important;
+}
+
+::ng-deep .mat-form-field .mat-focused .mat-form-field-ripple 
+{
+    background-color: #00cad2 !important;
 }

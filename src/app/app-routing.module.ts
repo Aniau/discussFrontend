@@ -5,7 +5,7 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
 import { SettingsComponentComponent } from './settings-component/settings-component.component';
 import { ChatComponentComponent } from './chat-component/chat-component.component';
 import { UsersComponentComponent } from './users-component/users-component.component';
-import { RegistrationComponentComponent } from './registration-component/registration-component.component';
+import { VideoAudioComponentComponent } from './chat-component/video-audio-component/video-audio-component.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/authentication',component: AppComponent },
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'settings-component', component: SettingsComponentComponent },
   { path: 'chat-component', component: ChatComponentComponent },
   { path: 'users-component', component: UsersComponentComponent },
-  { path: 'registration-component', component: RegistrationComponentComponent}
+  { path: 'video-audio', component: VideoAudioComponentComponent}
 ];
 
 @NgModule({

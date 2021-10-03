@@ -46,7 +46,7 @@
 
 #menu-component
 {
-    width: 10%;
+    width: 5%;
 }
 
 #users
@@ -64,7 +64,7 @@
 
 .lightMode-background
 {
-    background-color: rgb(196, 196, 202);
+    background-color: #000f1cff;
 }
 
 .darkMode-card
@@ -74,5 +74,5 @@
 
 .lightMode-card
 {
-    background-color: white;
+    background-color: #002534ff;
 }

@@ -4,6 +4,7 @@ import { AuthServiceService } from '../service/auth-service.service';
 import { TokenServiceService } from '../service/token-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DarkModeServiceService } from '../service/dark-mode-service.service';
+import { SignalrConnectionService } from '../service/signalr-connection.service';
 
 @Component({
   selector: 'app-auth-component',
@@ -19,7 +20,7 @@ export class AuthComponentComponent implements OnInit {
   public logFailed = false;
 
   constructor(private router: Router, private AuthServiceService: AuthServiceService, private TokenService: TokenServiceService,
-              public snack: MatSnackBar, private darkModeService: DarkModeServiceService) { }
+              public snack: MatSnackBar, private darkModeService: DarkModeServiceService, private signalRConnectionService: SignalrConnectionService) { }
 
   ngOnInit(): void 
   {
@@ -50,12 +51,22 @@ export class AuthComponentComponent implements OnInit {
     // { 
     //  this.loggedIn = true;
     //  this.logFailed = false;
-     console.log(this.login);
+    //  console.log(this.login);
     //  console.log(this.pass);
+    // window.sessionStorage.setItem('userId', value.id); ??
     //  this.TokenService.saveToken(value.token);
+    // this.signalRConnectionService.connectToSignalR(value.token).subscribe(
+    //   result => {
+    //     console.log(result);
+    // window.sessionStorage.setItem('clientCommunicationHubId', '4344-44-4-4-44');
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
     
      window.sessionStorage.setItem('currentloggedin', this.login);
-      
+      // window.sessionStorage.setItem('communicationHubId', '4344-44-4-4-44');
 //      this.snack.open('Correctly login user: ' + this.login, 'Close', {duration: 40000, panelClass: ['snack-correct']});
 //      this.router.navigate(['dashboard-component']);
 //      console.log(value) 
@@ -69,6 +80,6 @@ export class AuthComponentComponent implements OnInit {
 //      this.snack.open('Wrong username or password !', 'Close', {duration: 2000, panelClass: ['snack-error']});
 //      console.log(error);
 //     });
-    this.router.navigate(['dashboard-component']);
+    this.router.navigate(['chat-component']);
   }
 }

@@ -24,6 +24,11 @@ import { UsersComponentComponent } from './users-component/users-component.compo
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LogoComponentComponent } from './logo-component/logo-component.component';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
+import { VideoAudioComponentComponent } from './chat-component/video-audio-component/video-audio-component.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,8 @@ import { RegistrationComponentComponent } from './registration-component/registr
     ChatComponentComponent,
     UsersComponentComponent,
     LogoComponentComponent,
-    RegistrationComponentComponent
+    RegistrationComponentComponent,
+    VideoAudioComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +60,12 @@ import { RegistrationComponentComponent } from './registration-component/registr
     AppRoutingModule,
     MatSidenavModule,
     MatMenuModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatDividerModule,
+    PickerModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

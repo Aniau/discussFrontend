@@ -24,15 +24,45 @@
 
 #menu-component
 {
-    width: 10%;
+    width: 5%;
 }
 
 #settings
 {
     border-radius: 30px;
-    width: 85%;
+    width: 90%;
+    /* display: flex; */
+    /* grid-template-columns: 1;
+    grid-template-rows: auto;
+    row-gap: 10px;
+    justify-items: center; */
+    /* flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; */
+    /* align-content: center; */
 }
 
+.settings-item
+{
+    box-shadow: none !important;
+    width: 100%;
+    place-self: center stretch;
+}
+
+.sunny
+{
+    padding-right: 3%;
+}
+
+.night
+{
+    padding-left: 1%;
+}
+
+#dark-mode-toggle
+{
+   padding-bottom: 2%;
+}
 /* DARK MODE */
 
 .darkMode-background
@@ -42,15 +72,17 @@
 
 .lightMode-background
 {
-    background-color: rgb(196, 196, 202);
+    background-color: #000f1cff;
 }
 
 .darkMode-card
 {
     background-color: rgb(71, 71, 71);
+    color: white;
 }
 
 .lightMode-card
 {
-    background-color: white;
+    background-color: #002534ff;
+    /* color: rgb(71, 71, 71); */
 }
